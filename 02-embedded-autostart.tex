@@ -1,0 +1,10 @@
+% Embedded video, played when the page is opened (and on click). Page 1 is
+% opened with the document, page 2 by navigating to it; page 2 has a
+% different video (clip2.mp4), so it's clear which one is playing.
+\input{example-setup}
+\usepackage{multimedia}
+\begin{document}
+\media[embed,autostart,alt={Test clip: a coloured bar moving from left to right}]{\poster}{clip.mp4}
+\clearpage
+\media[embed,autostart,alt={Second test clip: a black dot moving from top to bottom}]{\poster}{clip2.mp4}
+\end{document}

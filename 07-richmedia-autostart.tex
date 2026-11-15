@@ -1,0 +1,10 @@
+% RichMedia annotation (video instance), embedded video, activated on page
+% open. Page 1 is opened with the document, page 2 by navigating to it; page 2
+% has a different video (clip2.mp4), so it's clear which one is playing.
+\input{example-setup}
+\input{richmedia}
+\begin{document}
+\richmedia{PO}{Test clip: a coloured bar moving from left to right}{\poster}{clip.mp4}
+\clearpage
+\richmedia{PO}{Second test clip: a black dot moving from top to bottom}{\poster}{clip2.mp4}
+\end{document}

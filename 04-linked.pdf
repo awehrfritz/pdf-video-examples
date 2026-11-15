@@ -1,0 +1,132 @@
+%PDF-2.0
+%ÐÔÅØ
+9 0 obj
+<<
+/Length 39        
+>>
+stream
+q
+1 0 0 1 148.712 582.754 cm
+/Fm1 Do
+Q
+
+endstream
+endobj
+7 0 obj
+<<
+/Type /Page
+/Contents 9 0 R
+/Resources 8 0 R
+/MediaBox [0 0 595.276 841.89]
+/Parent 10 0 R
+/Annots [ 3 0 R ]
+>>
+endobj
+1 0 obj
+<<
+/R 22050
+/Length 0         
+>>
+stream
+
+endstream
+endobj
+6 0 obj
+ << /Type /Rendition /S /MR /C << /Type /MediaClip /S /MCD /D << /Type /Filespec /F (clip.mp4) >> /CT (video/mp4)/Alt [() (Test\040clip\040\(linked\040file\))]/P << /Type /MediaPermissions /TF (TEMPACCESS) >> >> /P << /Type /MediaPlayParams /BE << /C true >> >> >> 
+endobj
+4 0 obj
+ << /Type /Action /S /Rendition /OP 0 /AN 3 0 R /R 6 0 R >> 
+endobj
+5 0 obj
+ << /Type /Action /S /Rendition /OP 1 /AN 3 0 R /R 6 0 R >> 
+endobj
+2 0 obj
+<<
+/Type /XObject
+/Subtype /Form
+/BBox [0 0 226.772 134.334]
+/FormType 1
+/Matrix [1 0 0 1 0 0]
+/Resources 11 0 R
+/Length 256       
+>>
+stream
+q
+1 0 0 1 0 134.134 cm
+[]0 d 0 J 0.398 w 0 0 m 226.772 0 l S
+Q
+q
+1 0 0 1 0.199 0.398 cm
+[]0 d 0 J 0.398 w 0 0 m 0 133.537 l S
+Q
+q
+1 0 0 1 226.572 0.398 cm
+[]0 d 0 J 0.398 w 0 0 m 0 133.537 l S
+Q
+q
+1 0 0 1 0 0.199 cm
+[]0 d 0 J 0.398 w 0 0 m 226.772 0 l S
+Q
+
+endstream
+endobj
+11 0 obj
+<<
+>>
+endobj
+3 0 obj
+<<
+/Type /Annot
+ /Subtype /Screen /Contents (Test\040clip\040\(linked\040file\))/P 7 0 R /AP << /N 2 0 R >> /A 4 0 R /AA << /PC 5 0 R >> 
+/Rect [148.712 582.754 375.484 717.088]
+>>
+endobj
+8 0 obj
+<<
+/XObject << /Fm1 2 0 R >>
+>>
+endobj
+10 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [7 0 R]
+>>
+endobj
+12 0 obj
+<<
+/Type /Catalog
+/Pages 10 0 R
+>>
+endobj
+13 0 obj
+<<
+/Producer (pdfTeX-1.40.29)
+/Creator (TeX)
+/Trapped /False
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000242 00000 n 
+0000000742 00000 n 
+0000001188 00000 n 
+0000000590 00000 n 
+0000000666 00000 n 
+0000000309 00000 n 
+0000000112 00000 n 
+0000001384 00000 n 
+0000000015 00000 n 
+0000001431 00000 n 
+0000001166 00000 n 
+0000001489 00000 n 
+0000001540 00000 n 
+trailer
+<< /Size 14
+/Root 12 0 R
+/Info 13 0 R
+ >>
+startxref
+1620
+%%EOF

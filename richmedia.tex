@@ -1,0 +1,53 @@
+% \richmedia{<activation>}{<alt text>}{<poster>}{<file>}: a RichMedia annotation
+% (ISO 32000-2, 13.7) with a video instance and the embedded file <file>;
+% <activation> is XA (click), PO (page open) or PV (page visible).
+% pdfTeX primitives only. As PDF 2.0 requires, the instance's /Asset is also
+% listed in the /Assets name tree. FlashVars `source=' is not part of PDF 2.0;
+% poppler before 26.10.90 (Okular) needs it to find the file.
+\begingroup
+  \catcode`\#=12
+  \gdef\hashchar{#}%
+\endgroup
+\newcommand\richmedia[4]{%
+  \leavevmode
+  \begingroup
+    % Embed each file once; later uses refer to the same file specification.
+    \ifcsname rm@filespec@#4\endcsname\else
+      \immediate\pdfobj stream attr {%
+        /Type /EmbeddedFile /Subtype /video\hashchar 2Fmp4
+        /Params << /Size \pdffilesize{#4} >>%
+      } file {#4}%
+      \edef\efobj{\the\pdflastobj}%
+      \immediate\pdfobj {<< /Type /Filespec /F (#4) /UF (#4)
+        /EF << /F \efobj\space 0 R >> >>}%
+      \expandafter\xdef\csname rm@filespec@#4\endcsname{\the\pdflastobj}%
+    \fi
+    \edef\fsobj{\csname rm@filespec@#4\endcsname}%
+    \immediate\pdfobj {<< /Type /RichMediaInstance /Subtype /Video
+      /Asset \fsobj\space 0 R /Params << /FlashVars (source=#4) >> >>}%
+    \edef\instobj{\the\pdflastobj}%
+    \immediate\pdfobj {<< /Type /RichMediaConfiguration /Subtype /Video
+      /Instances [\instobj\space 0 R] >>}%
+    \edef\confobj{\the\pdflastobj}%
+    \immediate\pdfobj {<< /Type /RichMediaContent
+      /Assets << /Names [(#4) \fsobj\space 0 R] >>
+      /Configurations [\confobj\space 0 R] >>}%
+    \edef\contobj{\the\pdflastobj}%
+    \immediate\pdfobj {<< /Type /RichMediaSettings
+      /Activation << /Type /RichMediaActivation /Condition /#1
+        /Presentation << /Type /RichMediaPresentation /Style /Embedded >> >>
+      /Deactivation << /Type /RichMediaDeactivation /Condition /PC >> >>}%
+    \edef\setobj{\the\pdflastobj}%
+    \setbox0=\hbox{#3}%
+    % \pdfxform empties box 0, so keep its size for the annotation.
+    \edef\apsize{width \the\wd0\space height \the\ht0\space depth \the\dp0}%
+    \immediate\pdfxform0 \edef\apobj{\the\pdflastxform}%
+    \pdfannot \apsize\space {%
+      /Subtype /RichMedia /Contents (#2)
+      /P \pdfpageref\numexpr\ReadonlyShipoutCounter+1\relax\space 0 R
+      /AP << /N \apobj\space 0 R >>
+      /RichMediaContent \contobj\space 0 R
+      /RichMediaSettings \setobj\space 0 R}%
+    \pdfrefxform\apobj
+  \endgroup
+}

@@ -1,0 +1,5 @@
+# Never convert line endings: the uncompressed PDFs look like text, but byte offsets matter
+*.pdf binary
+*.pptx binary
+*.mp4 binary
+*.wav binary

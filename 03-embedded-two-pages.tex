@@ -1,0 +1,9 @@
+% The same embedded video on two pages: the file is embedded once and both
+% media clips refer to the same file specification.
+\input{example-setup}
+\usepackage{multimedia}
+\begin{document}
+\media[embed,alt={Test clip, page 1}]{\poster}{clip.mp4}
+\clearpage
+\media[embed,alt={Test clip, page 2}]{\poster}{clip.mp4}
+\end{document}
