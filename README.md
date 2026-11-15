@@ -201,6 +201,66 @@ build with a fix for
 `example-setup.tex` sets PDF 2.0, no compression and reproducible output (no
 dates, no trailer ID).
 
+## References
+
+### PDF standards
+
+- ISO 32000-2:2020 (PDF 2.0): available free of charge from the PDF
+  Association, <https://pdfa.org/sponsored-standards/>
+- PDF 1.7 (ISO 32000-1:2008) and the earlier PDF references by Adobe:
+  <https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/#documentation>
+
+### Viewers
+
+- pdf.js (Firefox):
+  - support for RichMedia annotations:
+    [mozilla/pdf.js#21474](https://github.com/mozilla/pdf.js/pull/21474)
+  - support for screen annotations playing embedded media:
+    [mozilla/pdf.js#21490](https://github.com/mozilla/pdf.js/pull/21490)
+  - validation of media types:
+    [mozilla/pdf.js#21977](https://github.com/mozilla/pdf.js/pull/21977)
+  - the original request (2013):
+    [mozilla/pdf.js#2787](https://github.com/mozilla/pdf.js/issues/2787)
+- Okular:
+  - screen annotations don't start media on page open:
+    [KDE bug 491780](https://bugs.kde.org/show_bug.cgi?id=491780)
+  - how Okular finds the media of RichMedia annotations without Flash
+    (`createMovieFromPopplerRichMedia`):
+    [generators/poppler/generator_pdf.cpp](https://invent.kde.org/graphics/okular/-/blob/master/generators/poppler/generator_pdf.cpp)
+- Adobe Acrobat creates RichMedia annotations when adding media:
+  <https://helpx.adobe.com/acrobat/using/adding-multimedia-pdfs.html>
+
+### LaTeX
+
+- TeX.SX,
+  [Media9 is becoming obsolete Dec 2020. Any alternatives for embedding video/audio in LaTeX?](https://tex.stackexchange.com/q/516029):
+  - [answer by Alexander Grahn (AlexG)](https://tex.stackexchange.com/a/516102):
+    RichMedia annotations without Flash, written with `pdfbase` (part of
+    `media9`)
+  - [answer by Fritz](https://tex.stackexchange.com/a/592827): screen
+    annotations with media renditions, also with `pdfbase`
+- `media9`: discussion of the approaches to multimedia in LaTeX in
+  [issue #9](https://gitlab.com/agrahn/media9/-/issues/9), including
+  [why `movie15` was abandoned in favour of `media9`](https://gitlab.com/agrahn/media9/-/issues/9#note_466522267)
+  and [a comparison of the approaches](https://gitlab.com/agrahn/media9/-/issues/9#note_550025140)
+- `beamer`:
+  - a comparison of the approaches in
+    [josephwright/beamer#482](https://github.com/josephwright/beamer/issues/482#issuecomment-415968171)
+  - `\media` with screen annotations for beamer's `multimedia` package:
+    [josephwright/beamer#971](https://github.com/josephwright/beamer/pull/971),
+    not merged since beamer takes no new features; the code is on the branch
+    [`screen-annotations`](https://github.com/awehrfritz/beamer/tree/screen-annotations)
+    (and in `multimedia.sty` here)
+- Generic support through the LaTeX PDF management, as suggested in
+  [josephwright/ltx-talk#304](https://github.com/josephwright/ltx-talk/issues/304):
+  [latex3/pdfresources](https://github.com/latex3/pdfresources)
+
+### Other PDF writers
+
+- pdf-writer (Rust, used by typst): screen annotations with media renditions,
+  [typst/pdf-writer#31](https://github.com/typst/pdf-writer/pull/31)
+- LibreOffice exports media as screen annotations with embedded files (see 08)
+
 ## License
 
 Everything in this repository is dedicated to the public domain under
